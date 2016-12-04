@@ -8,12 +8,13 @@ bool isEvenParity(uint64_t n) {
     uint64_t oneCount = 0;
     //get lsb, push out lsb, check if bit is one, continue until no more bits
     while (n!=0) {
-        int nextBit = n & 1;
+        uint64_t nextBit = n & 1;
         n = n >> 1;
        if (nextBit == 1) {
            oneCount++;
        }
     }
+    //if ones%2 == 0 then return true (ie negate mod)
     return !(oneCount%2);
 }
 
